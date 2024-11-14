@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 const Layout = ({ children }) => {
@@ -6,16 +6,21 @@ const Layout = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-white">
-      <nav className="sticky w-full top-0 p-6 flex justify-between items-center z-50 bg-white">
+      <nav className="sticky w-full top-0 p-6 flex justify-between items-center z-50 bg-white shadow-sm">
         <button
           className="text-2xl font-light"
           onClick={() => (window.location.href = "/")}
         >
           J.L.
         </button>
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="z-50">
-          {isMenuOpen ? <X /> : <Menu />}
-        </button>
+        <div className="flex space-x-8">
+          <button className="">
+            <Link to="/login">Login</Link>
+          </button>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="z-50">
+            {isMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
         {isMenuOpen && (
           <div className="fixed inset-0 bg-white">
             <div className="h-full flex flex-col justify-center items-center space-y-8 text-2xl">
@@ -57,7 +62,7 @@ const Layout = ({ children }) => {
 
       {/* Footer */}
       <footer className="px-6 py-12 border-t">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex</footer>-row justify-between items-center space-y-6 md:space-y-0">
           <span className="text-sm text-gray-400">
             © 2024 All rights reserved
           </span>
