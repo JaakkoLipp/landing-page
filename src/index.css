@@ -1,0 +1,201 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+#root {
+  margin: auto auto;
+  padding: auto;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-black;
+    font-feature-settings: "salt" 1, "ss01" 1, "ss02" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-light leading-tight;
+  }
+
+  /* Typography scale */
+  h1 {
+    @apply text-6xl md:text-8xl mb-6;
+  }
+
+  h2 {
+    @apply text-4xl md:text-6xl mb-4;
+  }
+
+  h3 {
+    @apply text-xl font-light mb-3;
+  }
+
+  p {
+    @apply text-gray-600 leading-relaxed;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Section layouts */
+  .section {
+    @apply min-h-screen px-6 py-32;
+  }
+
+  .section-inner {
+    @apply max-w-6xl mx-auto;
+  }
+
+  /* Grid layouts */
+  .grid-2-cols {
+    @apply grid md:grid-cols-2 gap-12 md:gap-24;
+  }
+
+  /* Spacing utilities */
+  .space-content {
+    @apply space-y-6 md:space-y-8;
+  }
+
+  .space-content-lg {
+    @apply space-y-12 md:space-y-24;
+  }
+
+  /* Button styles */
+  .btn {
+    @apply border border-black px-6 py-3 transition-colors duration-300 ease-in-out;
+  }
+
+  .btn:hover {
+    @apply bg-black text-white;
+  }
+
+  .btn-link {
+    @apply inline-flex items-center space-x-2 hover:opacity-80 transition-opacity;
+  }
+
+  /* Navigation styles */
+  .nav-link {
+    @apply text-sm tracking-wide hover:opacity-70 transition-all duration-300;
+  }
+
+  .nav-link-active {
+    @apply opacity-100;
+  }
+}
+
+/* Animations */
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  /* Stagger children animations */
+  .stagger-children > * {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .stagger-children > *:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .stagger-children > *:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .stagger-children > *:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .stagger-children > *:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+}
+
+/* Custom scrollbar */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 hover:bg-gray-400 transition-colors;
+    border-radius: 5px;
+  }
+}
+
+/* Project card hover effects */
+.project-card {
+  @apply relative overflow-hidden;
+}
+
+.project-card::after {
+  content: "";
+  @apply absolute inset-0 bg-black/0 transition-colors duration-300 pointer-events-none;
+}
+
+.project-card:hover::after {
+  @apply bg-black/5;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+}
+
+/* Print styles */
+@media print {
+  .section {
+    @apply min-h-0 py-12;
+  }
+
+  .btn {
+    @apply border-gray-400 text-gray-600;
+  }
+}
