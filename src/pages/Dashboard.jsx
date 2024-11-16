@@ -7,6 +7,8 @@ import {
   ChartArea,
 } from "lucide-react";
 
+{/*in pursuit of great, we fail to do good*/}
+
 const DashboardPage = () => {
   // Sample data for the chart
   const quotationData = Array.from({ length: 12 }, (_, i) => ({
