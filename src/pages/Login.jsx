@@ -39,14 +39,16 @@ const LoginPage = () => {
                   required
                 />
               </div>
-              <Link to="/dashboard">
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 bg-black text-white rounded hover:bg-gray-800 transition-colors"
-                >
-                  Log In
-                </button>
-              </Link>
+              <div className="">
+                <Link to="/dashboard">
+                  <button
+                    type="submit"
+                    className="w-full px-6 py-3 bg-black text-white rounded hover:bg-gray-800 transition-colors"
+                  >
+                    Log In
+                  </button>
+                </Link>
+              </div>
             </form>
             <p className="text-sm text-gray-600 text-center mt-4">
               Don't have an account?{" "}
