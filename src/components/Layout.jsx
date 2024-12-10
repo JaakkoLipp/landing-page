@@ -38,13 +38,6 @@ const Layout = ({ children }) => {
               Home
             </Link>
             <Link
-              to="/work"
-              className="hover:opacity-50"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Work
-            </Link>
-            <Link
               to="/about"
               className="hover:opacity-50"
               onClick={() => setIsMenuOpen(false)}
@@ -52,11 +45,11 @@ const Layout = ({ children }) => {
               About
             </Link>
             <Link
-              to="/contact"
+              to="/work"
               className="hover:opacity-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              Work
             </Link>
           </div>
         </div>

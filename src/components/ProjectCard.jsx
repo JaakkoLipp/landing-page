@@ -8,7 +8,7 @@ const ProjectCard = ({ project }) => {
           {project}
         </h3>
         <span className="text-sm text-gray-400 group-hover:opacity-50 transition-opacity">
-          (from card component) View Project →
+          View Project →
         </span>
       </div>
     </div>

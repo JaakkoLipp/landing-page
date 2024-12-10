@@ -31,7 +31,11 @@ const HomePage = () => {
           <h2 className="text-4xl md:text-6xl font-light">Recent Work . . .</h2>
 
           <div className="grid gap-12">
-            {["Project One", "Project Two", "Project Three"].map((project) => (
+            {[
+              "Distributed database demo for YouTube",
+              "Full-stack distributed web application",
+              "Keyboard Over-The-Air",
+            ].map((project) => (
               <ProjectCard key={project} project={project} />
             ))}
           </div>
